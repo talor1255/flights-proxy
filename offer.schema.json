@@ -1,0 +1,84 @@
+{
+  "$id": "offer.schema.json",
+  "type": "object",
+  "required": [
+    "id",
+    "origin",
+    "destination",
+    "departAt",
+    "airline",
+    "stops",
+    "durationMin",
+    "price",
+    "currency",
+    "updatedAt"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "origin": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 3
+    },
+    "destination": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 3
+    },
+    "departAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "returnAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "airline": {
+      "type": "string"
+    },
+    "stops": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "durationMin": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "baggage": {
+      "type": "string",
+      "enum": [
+        "included",
+        "not_included",
+        "unknown"
+      ]
+    },
+    "price": {
+      "type": "number",
+      "minimum": 0
+    },
+    "currency": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 3
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "offerId": {
+      "type": "string"
+    },
+    "deeplink": {
+      "type": "string"
+    },
+    "isLastMinute": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}
